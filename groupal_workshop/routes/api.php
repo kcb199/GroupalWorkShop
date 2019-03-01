@@ -17,12 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('products', 'ProductController@index');
-Route::post('products', 'ProductController@create');
-Route::put('products', 'ProductController@update');
-Route::delete('products', 'ProductController@delete');
-Route::get('categories', 'CategoryController@index');
-Route::post('categories', 'CategoryController@create');
-Route::put('categories', 'CategoryController@update');
-Route::delete('categories', 'CategoryController@delete');
+Route::get('products', 'ProductController@index')->middleware('auth.basic');
+Route::post('products', 'ProductController@create')->middleware('auth.basic');
+Route::put('products/{id}', 'ProductController@update')->middleware('auth.basic');
+Route::delete('products/{id}', 'ProductController@delete')->middleware('auth.basic');
+Route::get('categories', 'CategoryController@index')->middleware('auth.basic');
+Route::post('categories', 'CategoryController@create')->middleware('auth.basic');
+Route::put('categories/{id}', 'CategoryController@update')->middleware('auth.basic');
+Route::delete('categories/{id}', 'CategoryController@delete')->middleware('auth.basic');
 
