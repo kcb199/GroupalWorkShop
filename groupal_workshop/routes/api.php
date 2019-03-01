@@ -21,3 +21,8 @@ Route::get('products', 'ProductController@index');
 Route::post('products', 'ProductController@create');
 Route::put('products', 'ProductController@update');
 Route::delete('products', 'ProductController@delete');
+Route::get('categories', 'CategoryController@index');
+Route::post('categories', 'CategoryController@create');
+Route::put('categories', 'CategoryController@update');
+Route::delete('categories', 'CategoryController@delete');
+
